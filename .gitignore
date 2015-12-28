@@ -18,4 +18,7 @@ paket-files
 *.ide
 *.bak
 .vs
+bower_components
+node_modules
 .fake
+.wwwbuild
