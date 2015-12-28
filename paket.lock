@@ -1,0 +1,8 @@
+NUGET
+  remote: http://www.nuget.org/api/v2
+  specs:
+    FAKE (4.12.0)
+    NuGet.CommandLine (3.3.0)
+    NUnit.Console (3.0.1)
+    NUnit.Runners (3.0.1)
+      NUnit.Console (3.0.1)
