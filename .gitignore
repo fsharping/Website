@@ -22,3 +22,5 @@ bower_components
 node_modules
 .fake
 .wwwbuild
+build/app
+build/tests
