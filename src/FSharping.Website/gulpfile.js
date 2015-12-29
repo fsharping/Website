@@ -1,30 +1,46 @@
-﻿var gulp = require("gulp"),
-    rimraf = require("rimraf"),
-    concat = require("gulp-concat"),
+﻿var gulp = require('gulp-param')(require('gulp'), process.argv);
+var concat = require("gulp-concat"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify"),
-    debug = require('gulp-debug');
+    debug = require('gulp-debug'),
+    del = require('del'),
     watch = require('gulp-watch');
 
 // paths    
 var paths = {
     webroot: "wwwroot/",
-    buildroot: ".wwwbuild/",
     packagesRoot: "bower_components/",
-    debugBin: "bin/Debug/",
+    buildrootDebug: "bin/Debug/",
+    buildrootRelease: "../../build/app/"
 };
 
-paths.webHtmlSrc = "views/";
-paths.webHtmlDest = paths.debugBin + paths.webHtmlSrc;
-
 paths.jsSrc = paths.webroot + "js/*.js";
-paths.jsDest = paths.buildroot + "js/site.min.js";
-
 paths.cssSrc = paths.webroot + "css/*.css";
-paths.cssDest = paths.buildroot + "css/site.min.css";
+paths.templatesSrc = "views/";
 
-paths.fontsDest = paths.buildroot + "fonts/";
+function getBaseDest(isRelease) {
+    return isRelease ? paths.buildrootRelease : paths.buildrootDebug;
+}
 
+function getJsDest(isRelease) {
+    return getBaseDest(isRelease) + "js/site.min.js";
+}
+
+function getCssDest(isRelease) {
+    return getBaseDest(isRelease) + "css/site.min.css";
+}
+
+function getFontsDest(isRelease) {
+    return getBaseDest(isRelease) + "fonts/";
+}
+
+function getTemplatesDest(isRelease) {
+    return getBaseDest(isRelease) + "views/";
+}
+
+
+
+// packages paths
 paths.packages = {};
 paths.packages.jquery = paths.packagesRoot + "jquery/dist/";
 paths.packages.bootstrap = paths.packagesRoot + "bootstrap/dist/";
@@ -53,52 +69,49 @@ styles.push(paths.cssSrc);
 
 
 // clean tasks
-gulp.task("clean:js", function (cb) {
-    return rimraf(paths.jsDest, cb);
+gulp.task('clean:js', function (release) {
+    return del([getJsDest(release)]);
 });
 
-gulp.task("clean:css", function (cb) {
-    return rimraf(paths.cssDest, cb);
+gulp.task("clean:css", function (release) {
+    return del([getCssDest(release)]);
 });
 
-gulp.task("clean:fonts", function (cb) {
-    return rimraf(paths.fontsDest, cb);
+gulp.task("clean:fonts", function (release) {
+    return del([getFontsDest(release) + "**/*"]);
+});
+
+gulp.task("clean:templates", function (release) {
+    return del([getTemplatesDest(release) + "**/*"]);
 });
 
 // minification
-gulp.task("compile:js", ["clean:js"], function () {
+gulp.task("compile:js", ["clean:js"], function (release) {
     return gulp.src(scripts)
         .pipe(debug())
-        .pipe(concat(paths.jsDest))
+        .pipe(concat(getJsDest(release)))
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
 
-gulp.task("compile:css", ["clean:css"], function () {
+gulp.task("compile:css", ["clean:css"], function (release) {
     return gulp.src(styles)
         .pipe(debug())
-        .pipe(concat(paths.cssDest))
+        .pipe(concat(getCssDest(release)))
         .pipe(cssmin())
         .pipe(gulp.dest("."));
 });
 
-gulp.task("compile:fonts", ["clean:fonts"], function () {
+gulp.task("compile:fonts", ["clean:fonts"], function (release) {
     return gulp.src(fonts)
-        .pipe(gulp.dest(paths.fontsDest));
+        .pipe(gulp.dest(getFontsDest(release)));
 });
 
-// copy to bin
-
+gulp.task("compile:templates", ["clean:templates"], function (release) {
+    return gulp.src(paths.templatesSrc + "**/*")
+        .pipe(debug())
+        .pipe(gulp.dest(getTemplatesDest(release)));
+});
 
 // globals
-gulp.task("compile", ["compile:js", "compile:css", "compile:fonts"]);
-gulp.task("deploy:www",["compile"], function () {
-    return gulp.src(paths.buildroot + "**/*")
-        .pipe(debug())
-        .pipe(gulp.dest(paths.debugBin));
-});
-gulp.task("deploy:all", ["deploy:www"], function () {
-    return gulp.src(paths.webHtmlSrc + "**/*")
-        .pipe(debug())
-        .pipe(gulp.dest(paths.webHtmlDest));
-});
+gulp.task("compile", ["compile:js", "compile:css", "compile:fonts", "compile:templates"]);
