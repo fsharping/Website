@@ -6,8 +6,6 @@ open System.IO
 open Fake 
 open Fake.AssemblyInfoFile
 
-Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
-
 // Directories
 let buildAppDir = "./build/app/"
 let buildTestDir = "./build/tests/"
