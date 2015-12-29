@@ -7,6 +7,8 @@ open System.IO
 open Fake 
 open Fake.AssemblyInfoFile
 
+RestorePackages()
+
 // Directories
 let buildAppDir = "./build/app/"
 let buildTestDir = "./build/tests/"
