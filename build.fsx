@@ -87,7 +87,7 @@ Target "RunTests" (fun _ ->
 
 
 // Dependencies
-"CleanApp" ==> "AssemblyInfo" ==> "BuildWww" ==> "BuildApp"
+"CleanApp" ==> "AssemblyInfo" ==>  "BuildApp"
 "CleanTests" ==> "BuildTests"
 "BuildApp"  ==> "BuildTests"  ==> "RunTests"
 

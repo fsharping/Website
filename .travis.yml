@@ -1,14 +1,5 @@
-language: node_js
+language: objective-c
 sudo: required
-
-before_script:
-  - npm install -g bower
-  - npm install -g gulp
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - bower install -f
-
-node_js:
-    - "0.10"
 
 env:
   global:
