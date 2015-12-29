@@ -8,8 +8,6 @@ open Fake.AssemblyInfoFile
 
 Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
 
-RestorePackages()
-
 // Directories
 let buildAppDir = "./build/app/"
 let buildTestDir = "./build/tests/"
