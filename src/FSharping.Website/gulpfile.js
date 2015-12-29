@@ -38,8 +38,6 @@ function getTemplatesDest(isRelease) {
     return getBaseDest(isRelease) + "views/";
 }
 
-
-
 // packages paths
 paths.packages = {};
 paths.packages.jquery = paths.packagesRoot + "jquery/dist/";

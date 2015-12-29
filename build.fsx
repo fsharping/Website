@@ -57,6 +57,14 @@ Target "CleanTests" (fun _ ->
     CleanDir buildAppDir
 )
 
+Target "BuildWww" (fun _ ->
+    let gulp = tryFindFileOnPath (if isUnix then "gulp" else "gulp.cmd")
+    let errorCode = match gulp with
+                      | Some g -> Shell.Exec(g, "compile --release", appSrcDir)
+                      | None -> -1
+    ()
+)
+
 Target "BuildApp" (fun _ ->
    !! (appSrcDir + "**/*.fsproj")
      |> MSBuildRelease buildAppDir "Build"
@@ -79,7 +87,7 @@ Target "RunTests" (fun _ ->
 
 
 // Dependencies
-"CleanApp" ==> "AssemblyInfo" ==> "BuildApp"
+"CleanApp" ==> "AssemblyInfo" ==> "BuildWww" ==> "BuildApp"
 "CleanTests" ==> "BuildTests"
 "BuildApp"  ==> "BuildTests"  ==> "RunTests"
 
