@@ -3,7 +3,7 @@ language: csharp
 sudo: required
 
 install:
- - travis_wait sudo apt-get install npm
+ - apt-get install npm
 
 services:
   - docker
