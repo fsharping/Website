@@ -3,7 +3,7 @@ language: csharp
 sudo: required
 
 install:
- - sudo apt-get install npm
+ - sudo apt-get install npm -qq
 
 services:
   - docker
