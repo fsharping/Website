@@ -55,6 +55,17 @@ Target "CleanTests" (fun _ ->
 )
 
 Target "BuildWww" (fun _ ->
+    let npm = tryFindFileOnPath (if isUnix then "npm" else "npm.cmd")
+    let errorCode = match npm with
+                      | Some g -> Shell.Exec(g, "install", appSrcDir)
+                      | None -> -1
+    
+    let bower = tryFindFileOnPath (if isUnix then "bower" else "bower.cmd")
+    let errorCode = match npm with
+                      | Some g -> Shell.Exec(g, "install", appSrcDir)
+                      | None -> -1
+    
+
     let gulp = tryFindFileOnPath (if isUnix then "gulp" else "gulp.cmd")
     let errorCode = match gulp with
                       | Some g -> Shell.Exec(g, "compile --release", appSrcDir)
