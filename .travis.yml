@@ -3,7 +3,7 @@ language: csharp
 sudo: false  # use the new container-based Travis infrastructure
 
 install:
- - apt-get install npm
+ - sudo apt-get install npm
 
 before_script:
  - chmod +x build.sh
