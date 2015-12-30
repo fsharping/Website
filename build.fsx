@@ -7,8 +7,6 @@ open System.IO
 open Fake 
 open Fake.AssemblyInfoFile
 
-RestorePackages()
-
 // Directories
 let buildAppDir = "./build/app/"
 let buildTestDir = "./build/tests/"
@@ -86,7 +84,7 @@ Target "BuildWithTests" (fun _ ->
 
 
 // Dependencies
-"CleanApp" ==> "AssemblyInfo" ==>  "BuildApp"
+"CleanApp" ==> "AssemblyInfo" ==> "BuildWww" ==> "BuildApp"
 "CleanTests" ==> "BuildTests"
 "BuildApp"  ==> "BuildTests"  ==> "BuildWithTests"
 
