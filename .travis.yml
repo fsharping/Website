@@ -1,7 +1,7 @@
 language: csharp
 
 install:
- - sudo apt-get install npm
+ - sudo travis_wait 30 apt-get install npm
 
 services:
   - docker
@@ -9,7 +9,7 @@ services:
 before_script:
  - chmod +x build.sh
 
-script: 
+script:
  - npm install -g bower
  - npm install -g gulp
  - ./build.sh BuildWithTests
