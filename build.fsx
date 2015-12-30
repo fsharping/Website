@@ -61,7 +61,7 @@ Target "BuildWww" (fun _ ->
                       | None -> -1
     
     let bower = tryFindFileOnPath (if isUnix then "bower" else "bower.cmd")
-    let errorCode = match npm with
+    let errorCode = match bower with
                       | Some g -> Shell.Exec(g, "install", appSrcDir)
                       | None -> -1
     
