@@ -1,7 +1,7 @@
 language: csharp
 
 install:
- - sudo travis_wait 30 apt-get install npm
+ - travis_wait sudo apt-get install npm
 
 services:
   - docker
