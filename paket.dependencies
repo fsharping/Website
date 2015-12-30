@@ -3,3 +3,5 @@
 nuget FAKE
 nuget NUnit.Runners
 nuget Nuget.CommandLine
+nuget Shaver
+nuget FSharp.Formatting
