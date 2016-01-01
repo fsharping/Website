@@ -260,6 +260,6 @@
     </When>
   </Choose>
   <PropertyGroup>
-    <PostBuildEvent>gulp compile</PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Debug gulp compile</PostBuildEvent>
   </PropertyGroup>
 </Project>
