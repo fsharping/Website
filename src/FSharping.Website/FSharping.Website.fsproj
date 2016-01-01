@@ -63,10 +63,17 @@
   <ItemGroup>
     <None Include="paket.references" />
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="App.fs" />
     <None Include="bower.json" />
     <Content Include="gulpfile.js" />
     <None Include="package.json" />
+    <None Include="views\main.html" />
+    <None Include="views\menu.html" />
+    <None Include="views\layout.html" />
+    <None Include="strings\Texts.json" />
+    <Compile Include="Pages.fs" />
+    <Compile Include="App.fs" />
+    <Content Include="wwwroot\css\styles.css" />
+    <None Include="wwwroot\img\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -252,4 +259,7 @@
       </ItemGroup>
     </When>
   </Choose>
+  <PropertyGroup>
+    <PostBuildEvent>gulp compile</PostBuildEvent>
+  </PropertyGroup>
 </Project>

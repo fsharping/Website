@@ -1,0 +1,36 @@
+﻿@media (min-width: 979px) {
+    body {
+        padding-top: 90px;
+    }
+}
+
+.navbar {
+    min-height: 80px;
+}
+
+.navbar-default {
+    background-color: #30b9db;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #d6dae4;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:active {
+    color: #ffffff;
+}
+
+.navbar-brand > img {
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+}

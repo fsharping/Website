@@ -16,8 +16,10 @@ let config = { defaultConfig with bindings=[ (HttpBinding.mk' HTTP  "0.0.0.0" 80
 let webPart =
     localizeUICulture >>
     choose [
-        path "/" >>= OK ("Waiting... Again ;)")
-        pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2)" >>= Files.browseHome
+        path "/" >>= Pages.home
+        path "/blog" >>= Pages.home
+        path "/meetups" >>= Pages.home
+        pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2|ico|xml|json)" >>= Files.browseHome
     ]
 
 startWebServer config webPart
