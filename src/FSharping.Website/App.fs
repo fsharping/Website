@@ -2,24 +2,23 @@
 
 open Suave
 open Suave.Http
-open Suave.Http.Successful
 open Suave.Web
-open Suave.Types
-open Suave.Http.Applicatives
-open System.Globalization
 open Shaver.Localization
+open Suave.Filters
+open Suave.Operators
+open System.Net
 
 // change default bindings to avoid problems with Docker ports accesibility
-let config = { defaultConfig with bindings=[ (HttpBinding.mk' HTTP  "0.0.0.0" 8083) ] }
+let config = { defaultConfig with bindings=[ HttpBinding.mk HTTP (IPAddress.Parse "127.0.0.1") 8083us ] }
 
 // routing
 let webPart =
     localizeUICulture >>
     choose [
-        path "/" >>= Pages.home
-        path "/blog" >>= Pages.home
-        path "/meetups" >>= Pages.home
-        pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2|ico|xml|json)" >>= Files.browseHome
+        path "/" >=> Pages.home
+        path "/blog" >=> Pages.home
+        path "/meetups" >=> Pages.home
+        pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2|ico|xml|json)" >=> Files.browseHome
     ]
 
 startWebServer config webPart

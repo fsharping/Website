@@ -1,6 +1,6 @@
 ﻿module FSharping.Website.Pages
 
-open Suave.Types
+open Suave
 open Shaver.Razor
 
 
