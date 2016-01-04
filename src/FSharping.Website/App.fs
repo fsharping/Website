@@ -9,7 +9,7 @@ open Suave.Operators
 open System.Net
 
 // change default bindings to avoid problems with Docker ports accesibility
-let config = { defaultConfig with bindings=[ HttpBinding.mk HTTP (IPAddress.Parse "127.0.0.1") 8083us ] }
+let config = { defaultConfig with bindings=[ HttpBinding.mk HTTP (IPAddress.Parse "0.0.0.0") 8083us ] }
 
 // routing
 let webPart =
