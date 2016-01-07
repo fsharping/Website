@@ -7,6 +7,19 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharping.Website", "src\FS
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharping.Website.Tests", "tests\FSharping.Website.Tests\FSharping.Website.Tests.fsproj", "{C608B9F4-A6D1-4165-AF89-716FC212BEE0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{BBEC1A0E-FF45-4EA6-8878-4CE2EC487061}"
+	ProjectSection(SolutionItems) = preProject
+		build.fsx = build.fsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{A08CB454-D93F-46A8-8D24-AD3643E27CE1}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		Dockerfile = Dockerfile
+		README.md = README.md
+		RELEASE_NOTES.md = RELEASE_NOTES.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
