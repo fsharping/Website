@@ -19,6 +19,7 @@ let webPart =
         path "/blog" >=> Pages.home
         path "/meetups" >=> Pages.home
         pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2|ico|xml|json)" >=> Files.browseHome
+        pathRegex "(.*)" >=> Pages.error404
     ]
 
 startWebServer config webPart

@@ -69,6 +69,7 @@
     <None Include="views\main.html" />
     <None Include="views\menu.html" />
     <None Include="views\layout.html" />
+    <None Include="views\404.html" />
     <None Include="strings\Texts.json" />
     <Compile Include="Pages.fs" />
     <Compile Include="App.fs" />
