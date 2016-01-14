@@ -6,6 +6,7 @@ open System
 open System.IO
 open Fake 
 open Fake.AssemblyInfoFile
+open System.Diagnostics
 
 // Directories
 let buildAppDir = "./build/app/"
@@ -29,6 +30,9 @@ Target "?" (fun _ ->
     printfn "  > BuildApp"
     printfn "  > BuildTests"
     printfn "  > BuildWithTests"
+    printfn " "
+    printfn " [Run]"
+    printfn "  > RunWithRedeploy"
     printfn " "
     printfn " [Help]"
     printfn "  > ?"
@@ -54,7 +58,7 @@ Target "CleanTests" (fun _ ->
     CleanDir buildAppDir
 )
 
-Target "BuildWww" (fun _ ->
+Target "PreBuildWww" (fun _ ->
     let npm = tryFindFileOnPath (if isUnix then "npm" else "npm.cmd")
     let errorCode = match npm with
                       | Some g -> Shell.Exec(g, "install", appSrcDir)
@@ -64,8 +68,10 @@ Target "BuildWww" (fun _ ->
     let errorCode = match bower with
                       | Some g -> Shell.Exec(g, "install", appSrcDir)
                       | None -> -1
-    
+    ()
+)
 
+Target "BuildWww" (fun _ ->
     let gulp = tryFindFileOnPath (if isUnix then "gulp" else "gulp.cmd")
     let errorCode = match gulp with
                       | Some g -> Shell.Exec(g, "compile --release", appSrcDir)
@@ -74,10 +80,52 @@ Target "BuildWww" (fun _ ->
 )
 
 Target "BuildApp" (fun _ ->
-   !! (appSrcDir + "**/*.fsproj")
-     |> MSBuildRelease buildAppDir "Build"
-     |> Log "AppBuild-Output: "
+    !! (appSrcDir + "**/*.fsproj")
+    |> MSBuildRelease buildAppDir "Build"
+    |> Log "AppBuild-Output: "
 )
+    
+
+let rec runWebsite() =
+    use watcher = new FileSystemWatcher(appSrcDir, "*.*")
+    watcher.EnableRaisingEvents <- true
+    watcher.IncludeSubdirectories <- true
+    watcher.Changed.Add(handleWatcherEvents)
+    watcher.Created.Add(handleWatcherEvents)
+    watcher.Renamed.Add(handleWatcherEvents)
+   
+    let app = Path.Combine(buildAppDir,"FSharping.Website.exe")
+    let ok = 
+        execProcess (fun info -> 
+            info.WorkingDirectory <- buildAppDir
+            info.FileName <- app
+            info.Arguments <- "") TimeSpan.MaxValue
+    if not ok then tracefn "Website shut down."
+    watcher.Dispose()
+
+and handleWatcherEvents (e:IO.FileSystemEventArgs) =
+    
+    let killProcess = (fun _ -> Process.GetProcessesByName("FSharping.Website") |> Seq.iter (fun p -> p.Kill()))
+
+    match Path.GetExtension e.Name with
+    | ".fs" | ".fsx" -> 
+        killProcess()
+        runSingleTarget (getTarget "BuildApp")
+        runWebsite()
+
+    | ".html" | ".js" | ".css" | ".json" -> 
+        killProcess()
+        runSingleTarget (getTarget "BuildWww")
+        runWebsite()
+    | ".fsproj" -> ignore()
+    | _ -> ignore()
+    
+
+Target "RunWithRedeploy" (fun _ ->
+    run "BuildApp"
+    runWebsite()
+)
+
 
 Target "BuildTests" (fun _ ->
     !! (testSrcDir + "**/*.fsproj")
@@ -94,7 +142,9 @@ Target "BuildWithTests" (fun _ ->
 )
 
 
+
 // Dependencies
+"PreBuildWww" ==> "BuildWww"
 "CleanApp" ==> "AssemblyInfo" ==> "BuildWww" ==> "BuildApp"
 "CleanTests" ==> "BuildTests"
 "BuildApp"  ==> "BuildTests"  ==> "BuildWithTests"
