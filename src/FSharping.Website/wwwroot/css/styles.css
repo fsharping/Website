@@ -1,10 +1,13 @@
-﻿@media (min-width: 979px) {
-    body {
-        padding-top: 90px;
-    }
+﻿body {
+    padding-top: 90px;
+    
 }
 
 .navbar {
+    min-height: 80px;
+}
+
+.navbar-header {
     min-height: 80px;
 }
 
