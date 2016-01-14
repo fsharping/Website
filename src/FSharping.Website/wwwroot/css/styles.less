@@ -1,0 +1,58 @@
+﻿.menu-navbar {
+    min-height: 80px;
+}
+
+@color-text: #1e3948;
+@color-menu-bg: #30b9db;
+@color-menu-text: #d6dae4;
+@color-menu-text-active: #ffffff;
+
+body {
+    font-family: "Open Sans",serif;
+    padding-top: 90px;
+    color: @color-text;
+}
+
+a {
+    color: #30b9db;
+    text-decoration: none;
+}
+
+.nav > li > a {
+    padding: 15px 20px;
+}
+
+.navbar {
+    .menu-navbar;
+}
+
+.navbar-header {
+    .menu-navbar;
+}
+
+.navbar-default {
+    background-color: @color-menu-bg;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: @color-menu-text;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: @color-menu-text-active;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+    color: @color-menu-text-active;
+}
+
+.navbar-default .navbar-nav > li > a:active {
+    color: @color-menu-text-active;
+}
+
+.navbar-brand > img {
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+}

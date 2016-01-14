@@ -10,6 +10,7 @@
     "gulp-debug": "2.1.2",
     "gulp-param": "0.6.4",
     "del": "2.2.0",
+    "gulp-less": "3.0.5",
     "gulp-rev-append": "0.1.6"
 
   }

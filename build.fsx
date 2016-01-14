@@ -113,7 +113,7 @@ and handleWatcherEvents (e:IO.FileSystemEventArgs) =
         runSingleTarget (getTarget "BuildApp")
         runWebsite()
 
-    | ".html" | ".js" | ".css" | ".json" -> 
+    | ".html" | ".js" | ".css" | ".json" | ".less" -> 
         killProcess()
         runSingleTarget (getTarget "BuildWww")
         runWebsite()

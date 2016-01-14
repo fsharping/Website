@@ -4,6 +4,7 @@ var concat = require("gulp-concat"),
     uglify = require("gulp-uglify"),
     debug = require('gulp-debug'),
     del = require('del'),
+    less = require('gulp-less'),
     rev = require('gulp-rev-append');
 
 // paths    
@@ -15,7 +16,7 @@ var paths = {
 };
 
 paths.jsSrc = paths.webroot + "js/*.js";
-paths.cssSrc = paths.webroot + "css/*.css";
+paths.cssSrc = paths.webroot + "css/*.less";
 paths.viewsSrc = "views/";
 paths.stringsSrc = "strings/";
 paths.imagesSrc = paths.webroot + "img/";
@@ -122,6 +123,7 @@ gulp.task("compile:js", ["clean:js"], function (release) {
 
 gulp.task("compile:css", ["clean:css"], function (release) {
     return gulp.src(styles)
+        .pipe(less())
         .pipe(debug())
         .pipe(concat(getCssDest(release)))
         .pipe(cssmin())

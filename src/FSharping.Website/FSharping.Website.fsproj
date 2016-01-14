@@ -73,7 +73,7 @@
     <None Include="strings\Texts.json" />
     <Compile Include="Pages.fs" />
     <Compile Include="App.fs" />
-    <Content Include="wwwroot\css\styles.css" />
+    <None Include="wwwroot\css\styles.less" />
     <None Include="wwwroot\img\logo.png" />
   </ItemGroup>
   <ItemGroup>
