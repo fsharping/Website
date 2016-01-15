@@ -7,9 +7,14 @@ open Shaver.Localization
 open Suave.Filters
 open Suave.Operators
 open System.Net
+open Suave.Writers
+
+let mimeTypes =
+  defaultMimeTypesMap
+    @@ (function | ".woff2" -> mkMimeType "application/font-woff2" false | _ -> None)
 
 // change default bindings to avoid problems with Docker ports accesibility
-let config = { defaultConfig with bindings=[ HttpBinding.mk HTTP IPAddress.Any 8083us ] }
+let config = { defaultConfig with bindings=[ HttpBinding.mk HTTP IPAddress.Any 8083us ]; mimeTypesMap = mimeTypes }
 
 // routing
 let webPart =
