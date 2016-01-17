@@ -4,17 +4,27 @@
 
 @color-text: #1e3948;
 @color-menu-bg: #30b9db;
+@color-a: @color-menu-bg;
 @color-menu-text: #d6dae4;
 @color-menu-text-active: #ffffff;
+@color-footer-bg: @color-menu-bg;
+
+@footer-height: 35px;
+
+html {
+  height: 100%;
+}
 
 body {
     font-family: "Open Sans",serif;
+    font-size: 16px;
     padding-top: 90px;
     color: @color-text;
+    height: 100%;
 }
 
 a {
-    color: #30b9db;
+    color: @color-a;
     text-decoration: none;
 }
 
@@ -40,19 +50,45 @@ a {
     font-size: 20px;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover  {
     color: @color-menu-text-active;
-}
-
-.navbar-default .navbar-nav > li > a:focus {
-    color: @color-menu-text-active;
-}
-
-.navbar-default .navbar-nav > li > a:active {
-    color: @color-menu-text-active;
+    background-color: @color-menu-bg;
 }
 
 .navbar-brand > img {
     border-radius: 5px;
-    border: 2px solid #ffffff;
+    border: 2px solid @color-menu-text-active;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -@footer-height;
+  /* Pad bottom by footer height */
+  padding: 0 0 @footer-height;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: @footer-height;
+  background-color: @color-footer-bg;
+  font-size: 12px;
+  color: @color-menu-text-active;
+
+  .container .row {
+      margin-top: 5px;
+  }
+
+  a {
+      color: @color-menu-text;
+  }
+
+  a:hover {
+      color: @color-menu-text-active;
+  }
 }

@@ -1,0 +1,25 @@
+﻿{
+  "posts": [
+    {
+      "title": "Začínáme",
+      "rewrite": "zaciname",
+      "file": "2016/01-zaciname.md",
+      "published": "2016-01-16",
+      "author": "Roman Provazník"
+    },
+    {
+      "title": "Začínáme",
+      "rewrite": "zaciname2",
+      "file": "2016/01-zaciname.md",
+      "published": "2016-01-16",
+      "author": "Roman Provazník"
+    },
+    {
+      "title": "Začínáme",
+      "rewrite": "zaciname3",
+      "file": "2016/01-zaciname.md",
+      "published": "2016-01-16",
+      "author": "Roman Provazník"
+    }
+  ]
+}

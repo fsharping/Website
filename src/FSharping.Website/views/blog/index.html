@@ -1,0 +1,19 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        @foreach(var post in @Model) {
+        <div class="blogpost">
+            <h2><a href="~blog/@post.Rewrite">@post.Title</a></h2>
+            <p class="published">
+                @post.Published.ToString("dd. MM. yyyy")
+                {{{$:Texts:WrittenBy}}}&nbsp;@post.Author
+
+                <span class="comments">
+                    <i class="fa fa-comment"></i>&nbsp;
+                    <span class="disqus-comment-count" data-disqus-identifier="@post.Rewrite">{{{$:Texts:NoComments}}}</span>
+                </span>
+            </p>
+            <p class="perex">@Raw(post.Perex)&hellip;</p>
+        </div>
+        }
+    </div>
+</div>

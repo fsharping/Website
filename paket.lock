@@ -12,6 +12,7 @@ NUGET
     FSharpVSPowerTools.Core (2.2.0)
       FSharp.Compiler.Service (>= 1.4.2.0)
     Microsoft.AspNet.Razor (3.2.3) - framework: >= net45
+    Newtonsoft.Json (8.0.2)
     NuGet.CommandLine (3.3.0)
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)

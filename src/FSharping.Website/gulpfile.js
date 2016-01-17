@@ -20,6 +20,7 @@ paths.cssSrc = paths.webroot + "css/*.less";
 paths.viewsSrc = "views/";
 paths.stringsSrc = "strings/";
 paths.imagesSrc = paths.webroot + "img/";
+paths.blogpostsSrc = "blog/";
 
 function getBaseDest(isRelease) {
     return isRelease ? paths.buildrootRelease : paths.buildrootDebug;
@@ -47,6 +48,10 @@ function getStringsDest(isRelease) {
 
 function getImagesDest(isRelease) {
     return getBaseDest(isRelease) + "img/";
+}
+
+function getBlogpostsDest(isRelease) {
+    return getBaseDest(isRelease) + "blog/";
 }
 
 // packages paths
@@ -110,6 +115,10 @@ gulp.task("clean:favicons", function (release) {
         getBaseDest(release) + "*.json"], { force: true });
 });
 
+gulp.task("clean:blogposts", function (release) {
+    return del([getBlogpostsDest(release) + "**/*"], { force: true });
+});
+
 // minification
 gulp.task("compile:js", ["clean:js"], function (release) {
     return gulp.src(scripts)
@@ -118,8 +127,6 @@ gulp.task("compile:js", ["clean:js"], function (release) {
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
-
-
 
 gulp.task("compile:css", ["clean:css"], function (release) {
     return gulp.src(styles)
@@ -159,8 +166,14 @@ gulp.task("compile:images", ["clean:images"], function (release) {
         .pipe(gulp.dest(getImagesDest(release)));
 });
 
+gulp.task("compile:blogposts", ["clean:blogposts"], function (release) {
+    return gulp.src(paths.blogpostsSrc + "**/*")
+        .pipe(debug())
+        .pipe(gulp.dest(getBlogpostsDest(release)));
+});
+
 // globals
-gulp.task("precompile", ["compile:js", "compile:css", "compile:fonts", "compile:views", "compile:strings", "compile:favicons", "compile:images"]);
+gulp.task("precompile", ["compile:js", "compile:css", "compile:fonts", "compile:views", "compile:strings", "compile:favicons", "compile:images", "compile:blogposts"]);
 
 gulp.task("compile", ["precompile"], function (release) {
     var indexDes = getViewsDest(release) + "layout.html";

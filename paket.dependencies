@@ -1,6 +1,7 @@
 source http://nuget.org/api/v2
 
 nuget FAKE
+nuget Newtonsoft.Json
 nuget NUnit 2.6.4
 nuget NUnit.Runners 2.6.4
 nuget Nuget.CommandLine

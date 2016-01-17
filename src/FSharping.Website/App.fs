@@ -21,7 +21,8 @@ let webPart =
     localizeUICulture >>
     choose [
         path "/" >=> Pages.home
-        path "/blog" >=> Pages.home
+        path "/blog" >=> Pages.Blog.index
+        pathScan "/blog/%s" (fun rewrite -> Pages.Blog.detail rewrite)
         path "/meetups" >=> Pages.home
         pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2|ico|xml|json)" >=> Files.browseHome
         pathRegex "(.*)" >=> Pages.error404

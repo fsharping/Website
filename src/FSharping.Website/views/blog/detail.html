@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="blogpost">
+            <h2><a href="~blog/@Model.Rewrite">@Model.Title</a></h2>
+            <p class="published">
+                @Model.Published.ToString("dd. MM. yyyy")
+                {{{$:Texts:WrittenBy}}}&nbsp;@Model.Author
+            </p>
+            <p>@Raw(Model.Html)</p>
+        </div>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = '@Model.Rewrite'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            (function () {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//fsharping.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </div>
+</div>
