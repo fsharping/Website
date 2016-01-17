@@ -75,13 +75,17 @@ a {
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: @footer-height;
+  min-height: @footer-height;
   background-color: @color-footer-bg;
   font-size: 12px;
   color: @color-menu-text-active;
 
   .container .row {
       margin-top: 5px;
+  }
+
+  .author {
+      margin-right: 20px;
   }
 
   a {

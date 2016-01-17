@@ -70,10 +70,11 @@
     <None Include="blog\index.json" />
     <None Include="views\blog\detail.html" />
     <None Include="views\blog\index.html" />
+    <None Include="views\footer.html" />
     <None Include="views\main.html" />
     <None Include="views\menu.html" />
-    <None Include="views\layout.html" />
     <None Include="views\404.html" />
+    <None Include="views\layout.html" />
     <None Include="strings\Texts.json" />
     <Compile Include="Serialization.fs" />
     <Compile Include="Blog.fs" />
