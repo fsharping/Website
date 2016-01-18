@@ -18,6 +18,10 @@ let error404 : WebPart =
     ] |> masterPageWithCode HTTP_404 "views/layout.html" null
 
 module Blog =
+    
+    let rss =
+        let posts = Blog.getPosts |> Seq.toList
+        singlePage "views/blog/rss.html" posts
 
     let index =
         let posts = Blog.getPosts |> Seq.toList

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>FSharping - F# a funkcionální programování</title>
+        <link>http://fsharping.cz/blog/rss.xml</link>
+        <description>F# a funkcionální programování</description>
+        @foreach(var post in Model) {
+            <item>
+                <author>@post.Author</author>
+                <pubDate>@post.Published.ToString("yyyy-MM-dd")</pubDate>
+                <title>@post.Title</title>
+                @Raw("<link>http://fsharping.cz/blog/" + post.Rewrite + "</link>")
+                <description>@post.Perex</description>
+            </item>
+        }
+    </channel>
+</rss> 

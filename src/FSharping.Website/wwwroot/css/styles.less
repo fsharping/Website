@@ -77,7 +77,7 @@ a {
 #footer {
   min-height: @footer-height;
   background-color: @color-footer-bg;
-  font-size: 12px;
+  font-size: 14px;
   color: @color-menu-text-active;
 
   .container .row {
@@ -85,7 +85,20 @@ a {
   }
 
   .author {
-      margin-right: 20px;
+      opacity: 0.7;
+      margin-right: 10px;
+
+      a,a:hover {
+          text-decoration: none;
+      }
+  }
+
+  .author:hover {
+      opacity: 1;
+  }
+
+  .links a {
+      margin-left: 5px;
   }
 
   a {

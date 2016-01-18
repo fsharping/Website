@@ -68,6 +68,7 @@
     <None Include="package.json" />
     <None Include="blog\2016\01-zaciname.md" />
     <None Include="blog\index.json" />
+    <None Include="views\blog\rss.html" />
     <None Include="views\blog\detail.html" />
     <None Include="views\blog\index.html" />
     <None Include="views\footer.html" />
