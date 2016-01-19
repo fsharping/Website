@@ -15,6 +15,4 @@ script:
  - npm install -g bower
  - npm install -g gulp
  - ./build.sh BuildWithTests
- - docker build -t dzoukr/fsharping .
- - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
- - docker push dzoukr/fsharping
+
