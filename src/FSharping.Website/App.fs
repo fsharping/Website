@@ -22,7 +22,7 @@ let webPart =
     choose [
         path "/" >=> Pages.home
         path "/blog" >=> Pages.Blog.index
-        path "/blog/rss.xml" >=> Pages.Blog.rss
+        path "/blog/rss.xml" >=> Pages.Blog.rss >=> setMimeType "text/xml; charset=utf-8"
         pathScan "/blog/%s" (fun rewrite -> Pages.Blog.detail rewrite)
         path "/meetups" >=> Pages.home
         pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2|ico|xml|json)" >=> Files.browseHome
