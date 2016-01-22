@@ -17,7 +17,7 @@ type Blogpost = {
     Html : string;
 }
 
-let private blogPath src = "blog/" + src
+let private blogPath src = "data/blog/" + src
 let private indexFile = "index.json"
 let private perexMark = "[comment]:Perex"
 

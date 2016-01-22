@@ -66,8 +66,6 @@
     <None Include="bower.json" />
     <Content Include="gulpfile.js" />
     <None Include="package.json" />
-    <None Include="blog\2016\01-zaciname.md" />
-    <None Include="blog\index.json" />
     <None Include="views\blog\rss.html" />
     <None Include="views\blog\detail.html" />
     <None Include="views\blog\index.html" />
@@ -84,6 +82,8 @@
     <None Include="wwwroot\css\styles.less" />
     <None Include="wwwroot\css\blog.less" />
     <None Include="wwwroot\img\logo.png" />
+    <None Include="data\blog\2016\01-zaciname.md" />
+    <None Include="data\blog\index.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
