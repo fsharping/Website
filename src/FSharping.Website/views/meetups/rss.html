@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Srazy - FSharping - F# a funkcionální programování</title>
+        <link>http://fsharping.cz/meetups/rss.xml</link>
+        <description>F# a funkcionální programování</description>
+        @foreach(var item in Model) {
+            <item>
+                <title>@item.Title</title>
+                @Raw("<link>http://fsharping.cz/meetups/" + item.Rewrite + "</link>")
+                <description>@item.Description</description>
+            </item>
+        }
+    </channel>
+</rss> 

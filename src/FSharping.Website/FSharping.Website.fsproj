@@ -66,24 +66,30 @@
     <None Include="bower.json" />
     <Content Include="gulpfile.js" />
     <None Include="package.json" />
+    <None Include="data\blog\2016\01-zaciname.md" />
+    <None Include="data\blog\index.json" />
+    <None Include="data\meetups\index.json" />
     <None Include="views\blog\rss.html" />
     <None Include="views\blog\detail.html" />
     <None Include="views\blog\index.html" />
     <None Include="views\footer.html" />
     <None Include="views\main.html" />
+    <None Include="views\meetups\rss.html" />
+    <None Include="views\meetups\index.html" />
     <None Include="views\menu.html" />
     <None Include="views\404.html" />
     <None Include="views\layout.html" />
     <None Include="strings\Texts.json" />
     <Compile Include="Serialization.fs" />
+    <Compile Include="Meetups.fs" />
     <Compile Include="Blog.fs" />
     <Compile Include="Pages.fs" />
     <Compile Include="App.fs" />
     <None Include="wwwroot\css\styles.less" />
     <None Include="wwwroot\css\blog.less" />
+    <None Include="wwwroot\css\maps.less" />
     <None Include="wwwroot\img\logo.png" />
-    <None Include="data\blog\2016\01-zaciname.md" />
-    <None Include="data\blog\index.json" />
+    <Content Include="wwwroot\js\maps.js" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

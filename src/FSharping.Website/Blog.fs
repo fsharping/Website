@@ -17,12 +17,12 @@ type Blogpost = {
     Html : string;
 }
 
-let private blogPath src = "data/blog/" + src
+let private path src = "data/blog/" + src
 let private indexFile = "index.json"
 let private perexMark = "[comment]:Perex"
 
 let private withMarkdown post =
-    let markdown = post.File |> blogPath |> File.ReadAllText
+    let markdown = post.File |> path |> File.ReadAllText
     {post with Markdown = markdown}
 
 let private withHtml post =
@@ -35,7 +35,7 @@ let private withPerex post =
     | _ -> {post with Perex = post.Html}
 
 let getPosts =
-    let json = indexFile |> blogPath |> File.ReadAllText  |> JObject.Parse
+    let json = indexFile |> path |> File.ReadAllText  |> JObject.Parse
     json.["posts"]
     |> Seq.map (fun x -> deserialize<Blogpost>(x.ToString()))
     |> Seq.map withMarkdown

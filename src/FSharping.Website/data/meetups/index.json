@@ -1,0 +1,15 @@
+﻿{
+  "meetups": [
+    {
+      "title": "FSharping #1",
+      "rewrite": "fsharping-1",
+      "start": "2016-02-14 20:00:00",
+      "description": "Nas prvni meetup",
+      "address": "U Lambdy 15, Praha 1",
+      "gps": {
+        "lat": 50.045194,
+        "lon": 14.490695
+      }
+    }
+  ]
+}
