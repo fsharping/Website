@@ -97,9 +97,21 @@ a {
       opacity: 1;
   }
 
-  .links a {
-      margin-left: 5px;
+  .links {
+    a {
+        margin-left: 5px;
+    }
+
+    .popover-content {
+        a,i {
+            color: @color-a;
+        }
+
+        min-width: 150px;
+    }
   }
+
+  
 
   a {
       color: @color-menu-text;

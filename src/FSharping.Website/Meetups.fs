@@ -16,7 +16,8 @@ type Meetup = {
     Start: DateTime;
     Description : string;
     Address: string;
-    Gps : Gps
+    Gps : Gps;
+    Link : string;
 }
 
 let private path src = "data/meetups/" + src

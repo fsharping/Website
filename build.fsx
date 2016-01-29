@@ -126,7 +126,6 @@ Target "RunWithRedeploy" (fun _ ->
     runWebsite()
 )
 
-
 Target "BuildTests" (fun _ ->
     !! (testSrcDir + "**/*.fsproj")
       |> MSBuildDebug buildTestDir "Build"
