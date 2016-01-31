@@ -3,10 +3,10 @@
         @foreach(var post in @Model) {
         <div class="blogpost">
             <h2><a href="~blog/@post.Rewrite">@post.Title</a></h2>
-            <p class="published">
-              <div class="post-info">
-                @post.Published.ToString("dd. MM. yyyy") &nbsp; {{{$:Texts:WrittenBy}}}&nbsp;@post.Author
-              </div>
+
+            <p class="post-info">
+                @post.Published.ToString("dd. MM. yyyy")&nbsp;{{{$:Texts:WrittenBy}}}&nbsp;@post.Author
+
                 <span class="comments">
                     <i class="fa fa-comment"></i>&nbsp;
                     <span class="disqus-comment-count" data-disqus-identifier="@post.Rewrite">{{{$:Texts:NoComments}}}</span>
