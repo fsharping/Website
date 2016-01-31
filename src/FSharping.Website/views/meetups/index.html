@@ -1,11 +1,12 @@
 ﻿@foreach(var item in @Model) {
 <div class="row">
-    <div class="col-md-12 meetup-title">
-      <h2><a href="~meetups/@item.Rewrite">@item.Title</a></h2>
-      <p class="start">
-          <span>@item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm"), </span>
-          <span>@item.Address</span>
-      </p>
+    <div class="col-md-12 title">
+        <h2><a href="~meetups/@item.Rewrite">@item.Title</a></h2>
+        <p class="start">
+            <i class="fa fa-calendar-o"></i>
+            <span>@item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm"), </span>
+            <span>@item.Address</span>
+        </p>
     </div>
     <div class="col-md-6">
         <div class="meetup">

@@ -3,11 +3,20 @@
 open Suave
 open Shaver.Razor
 
-let home : WebPart = 
+let home : WebPart = warbler (fun _ -> 
+    let blogposts = Blog.getPosts |> Seq.toList
+    let meetups = Meetups.getMeetups |> Seq.toList
     [
         ("Menu", partial "views/menu.html" "home");
-        ("Content", partial "views/main.html" null);
+        ("Content", 
+            [("LeftCol",
+                [("Blog", partial "views/main/leftColBlog.html" blogposts);
+                 ("Meetups", partial "views/main/leftColMeetups.html" meetups)
+                ] |> nested "views/main/leftCol.html" null);
+        
+            ] |> nested "views/main/index.html" null);
     ] |> masterPage "views/layout.html" null
+)
 
 let error404 : WebPart =
     [
@@ -48,12 +57,10 @@ module Blog =
             ("Content", partial "views/blog/index.html" posts);
         ] |> masterPage "views/layout.html" (title "Blog")
 
-    let detail rewrite =
-         warbler 
-            (fun _ ->
-                let post = Blog.getPosts |> Seq.find (fun x -> x.Rewrite = rewrite)
-                [
-                    ("Menu", partial "views/menu.html" "blog");
-                    ("Content", partial "views/blog/detail.html" post);
-                ] |> masterPage "views/layout.html" (makeTitle post.Title)
-            )
+    let detail rewrite = warbler (fun _ ->
+        let post = Blog.getPosts |> Seq.find (fun x -> x.Rewrite = rewrite)
+        [
+            ("Menu", partial "views/menu.html" "blog");
+            ("Content", partial "views/blog/detail.html" post);
+        ] |> masterPage "views/layout.html" (makeTitle post.Title)
+    )

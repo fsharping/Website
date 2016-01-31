@@ -72,10 +72,13 @@
     <None Include="views\blog\rss.html" />
     <None Include="views\blog\detail.html" />
     <None Include="views\blog\index.html" />
+    <None Include="views\main\leftColMeetups.html" />
+    <None Include="views\main\leftColBlog.html" />
+    <None Include="views\main\index.html" />
+    <None Include="views\main\leftCol.html" />
     <None Include="views\meetups\rss.html" />
     <None Include="views\meetups\index.html" />
     <None Include="views\footer.html" />
-    <None Include="views\main.html" />
     <None Include="views\menu.html" />
     <None Include="views\404.html" />
     <None Include="views\layout.html" />
@@ -85,10 +88,11 @@
     <Compile Include="Blog.fs" />
     <Compile Include="Pages.fs" />
     <Compile Include="App.fs" />
-    <None Include="wwwroot\css\styles.less" />
     <None Include="wwwroot\css\blog.less" />
     <None Include="wwwroot\css\maps.less" />
     <None Include="wwwroot\css\meetups.less" />
+    <None Include="wwwroot\css\variables.less" />
+    <None Include="wwwroot\css\styles.less" />
     <None Include="wwwroot\img\logo.png" />
     <Content Include="wwwroot\js\maps.js" />
     <Content Include="wwwroot\js\popovers.js" />

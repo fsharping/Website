@@ -1,17 +1,8 @@
-﻿.menu-navbar {
+﻿@import "variables.less";
+
+.menu-navbar {
     min-height: 80px;
 }
-
-@color-text: #515151;
-@color-menu-bg: #30b9db;
-@color-a: @color-menu-bg;
-@color-menu-text: #d6dae4;
-@color-menu-text-active: #ffffff;
-@color-footer-bg: @color-menu-bg;
-@color-post-title: #303030;
-
-@footer-height: 35px;
-@font-size: 18px;
 
 html {
   height: 100%;
@@ -81,8 +72,8 @@ a {
   background-color: @color-footer-bg;
   font-size: 14px;
   color: @color-menu-text-active;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   .container .row {
       margin-top: 5px;
@@ -130,13 +121,23 @@ h2 {
   letter-spacing: -.025rem;
   font-size: 35px;
   margin-bottom: 9px;
+
+  a {
+    color: @color-post-title;
+  }
 }
 
-h2 a {
-  color: @color-post-title;
+.title {
+  margin-bottom: 20px;
 }
-
 
 .container {
   max-width: 850px;
+}
+
+.list {
+    ul {
+       list-style:none;
+       padding-left:0;
+    }
 }

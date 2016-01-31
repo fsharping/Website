@@ -1,0 +1,6 @@
+﻿<h3>Blog</h3>
+<ul>
+    @foreach(var item in Model) {
+    <li><a href="~/blog/@item.Rewrite">@item.Title</a></li>
+    }
+</ul>

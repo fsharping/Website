@@ -1,0 +1,11 @@
+﻿<h3>Srazy</h3>
+<ul>
+    @foreach(var item in Model) {
+    <li>
+        <a href="~/meetups/@item.Rewrite">@item.Title</a>
+        <p>
+            <i class="fa fa-calendar-o"></i> @item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm")
+        </p>
+    </li>
+    }
+</ul>
