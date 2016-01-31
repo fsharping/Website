@@ -2,22 +2,24 @@
     min-height: 80px;
 }
 
-@color-text: #1e3948;
+@color-text: #515151;;
 @color-menu-bg: #30b9db;
 @color-a: @color-menu-bg;
 @color-menu-text: #d6dae4;
 @color-menu-text-active: #ffffff;
 @color-footer-bg: @color-menu-bg;
+@color-post-title: #303030;
 
 @footer-height: 35px;
+@font-size: 20px;
 
 html {
   height: 100%;
 }
 
 body {
-    font-family: "Open Sans",serif;
-    font-size: 16px;
+    font-family: "PT Serif", Georgia, "Times New Roman", serif;
+    font-size: @font-size;
     padding-top: 90px;
     color: @color-text;
     height: 100%;
@@ -79,6 +81,8 @@ a {
   background-color: @color-footer-bg;
   font-size: 14px;
   color: @color-menu-text-active;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   .container .row {
       margin-top: 5px;
@@ -111,7 +115,7 @@ a {
     }
   }
 
-  
+
 
   a {
       color: @color-menu-text;
@@ -120,4 +124,40 @@ a {
   a:hover {
       color: @color-menu-text-active;
   }
+}
+
+h2 {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -.025rem;
+  font-size: 35px;
+  margin-bottom: 9px;
+}
+
+h2 a {
+  color: @color-post-title;
+}
+
+.post-info {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 23px;
+  color: #9a9a9a;
+  font-size: 18px;
+}
+
+.blogpost {
+  margin-bottom: 60px;
+}
+
+.container {
+  width: 850px;
+}
+
+.meetup-title {
+  margin-bottom: 20px;
+}
+
+.register, .meetup {
+  text-align: left;
 }

@@ -1,20 +1,19 @@
 ﻿@foreach(var item in @Model) {
 <div class="row">
+    <div class="col-md-12 meetup-title">
+      <h2><a href="~meetups/@item.Rewrite">@item.Title</a></h2>
+      <p class="start">
+          <span>@item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm"), </span>
+          <span>@item.Address</span>
+      </p>
+    </div>
     <div class="col-md-6">
         <div class="meetup">
-            <h2><a href="~meetups/@item.Rewrite">@item.Title</a>
-            </h2>
-            <p class="start">
-                @item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm")
-            </p>
-            <p class="address">
-                @item.Address
-            </p>
             <p class="description">
                 @item.Description
             </p>
             <div class="register">
-                <a href="@item.Link" class="btn btn-success"><i class="fa fa-users"></i>&nbsp;{{{$:Texts:IwantToCome}}}</a>
+                <a href="@item.Link"><i class="fa fa-users"></i>&nbsp;{{{$:Texts:IwantToCome}}}</a>
             </div>
         </div>
     </div>
