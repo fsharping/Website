@@ -1,7 +1,7 @@
 ﻿@foreach(var item in @Model) {
 <div class="row">
     <div class="col-md-12 title">
-        <h2><a href="~meetups/@item.Rewrite">@item.Title</a></h2>
+        <h2>@item.Title</h2>
         <p class="start">
             <i class="fa fa-calendar-o"></i>
             <span>@item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm"), </span>
