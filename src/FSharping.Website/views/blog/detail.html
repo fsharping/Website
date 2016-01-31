@@ -1,10 +1,9 @@
 ﻿<div class="row">
     <div class="col-md-12">
         <div class="blogpost">
-            <h2><a href="~blog/@Model.Rewrite">@Model.Title</a></h2>
-            <p class="published">
-                @Model.Published.ToString("dd. MM. yyyy")
-                {{{$:Texts:WrittenBy}}}&nbsp;@Model.Author
+            <h2>@Model.Title</h2>
+            <p class="post-info">
+                @Model.Published.ToString("dd. MM. yyyy")&nbsp;{{{$:Texts:WrittenBy}}}&nbsp;@Model.Author
             </p>
             <p>@Raw(Model.Html)</p>
         </div>
