@@ -1,7 +1,7 @@
 FROM        fsharp/fsharp
 MAINTAINER  Roman Provaznik <dzoukr@dzoukr.cz>
 
-ENV MONO_THREADS_PER_CPU 50
+ENV MONO_THREADS_PER_CPU 2000
 			
 ADD ./build/app/ app/
 EXPOSE 8083
