@@ -1,16 +1,16 @@
 ﻿{
   "meetups": [
     {
-      "title": "FSharping #1",
+      "title": "FSharping #1 - 10 způsobů jak začít s F#",
       "rewrite": "fsharping-1",
-      "start": "2016-02-14 20:00:00",
-      "description": "Ne aby ostře restaurací opadá přítomný, mým vyšší připomínající výzkumů otázkou, času se té míst obejít černém mořem cestování. Tvrdě slovník bývá supervulkán serveru objevují klíčem vrchol řečení, laně stavy, tu komunikace hustě problémů bílá délku, řad k skupině v sezoně. Vědeckou kurzů techniku navíc napadne, slovník sítě nějaká rozšířeným",
-      "address": "U Lambdy 15, Praha 1",
+      "start": "2016-02-15 19:00:00",
+      "description": "Jedna z největších ikon ve světě F# a shodou okolností Čech Tomáš Petříček bude historicky prvním hostem FSharpingu. Ukáže nám, jak začít s vývojem v F# a jak jednoduše řešit složité problémy a jaké nástroje nabízí ekosystém kolem F#.",
+      "address": "Pracovna, Vlkova 36, Praha 3 - Žižkov",
       "gps": {
-        "lat": 50.045194,
-        "lon": 14.490695
+        "lat": 50.0836364,
+        "lon": 14.4480897
       },
-      "link" : "https://www.srazy.info/fsharping"
+      "link": "https://www.srazy.info/fsharping"
     }
   ]
 }

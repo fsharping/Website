@@ -12,7 +12,8 @@
                     <span class="disqus-comment-count" data-disqus-identifier="@post.Rewrite">{{{$:Texts:NoComments}}}</span>
                 </span>
             </p>
-            <p class="perex">@Raw(post.Perex)&hellip;</p>
+            @Raw(post.Perex)
+            <a href="~blog/@post.Rewrite">{{{$:Texts:ReadMore}}}</a>
         </div>
         }
     </div>

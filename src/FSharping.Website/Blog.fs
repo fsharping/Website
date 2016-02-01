@@ -31,7 +31,7 @@ let private withHtml post =
 let private withPerex post =
     let perex = post.Markdown.Split([|perexMark|], StringSplitOptions.RemoveEmptyEntries)
     match perex.Length with
-    | 2 -> {post with Perex = perex.[0]}
+    | 2 -> {post with Perex = Markdown.TransformHtml(perex.[0])}
     | _ -> {post with Perex = post.Html}
 
 let getPosts =
