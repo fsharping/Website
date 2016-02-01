@@ -3,7 +3,7 @@
 open Suave
 open Shaver.Razor
 
-let home : WebPart = warbler (fun _ -> 
+let home : WebPart =
     let blogposts = Blog.getPosts |> Seq.toList
     let meetups = Meetups.getMeetups |> Seq.toList
     [
@@ -16,7 +16,6 @@ let home : WebPart = warbler (fun _ ->
         
             ] |> nested "views/main/index.html" null);
     ] |> masterPage "views/layout.html" null
-)
 
 let error404 : WebPart =
     [
