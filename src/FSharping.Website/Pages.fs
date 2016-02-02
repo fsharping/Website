@@ -33,7 +33,7 @@ let private title key =
 module Meetups =
     
     let rss =
-        let meetups = Meetups.getMeetups |> Seq.toList
+        let meetups = Meetups.getMeetups |> Seq.rev |> Seq.toList
         singlePage "views/meetups/rss.html" meetups
 
     let index = 
@@ -46,7 +46,7 @@ module Meetups =
 module Blog =
     
     let rss =
-        let posts = Blog.getPosts |> Seq.toList
+        let posts = Blog.getPosts |> Seq.rev |> Seq.toList
         singlePage "views/blog/rss.html" posts
 
     let index =
