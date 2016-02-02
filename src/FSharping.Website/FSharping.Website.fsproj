@@ -67,6 +67,7 @@
     <Content Include="gulpfile.js" />
     <None Include="package.json" />
     <None Include="data\blog\2016\01-zaciname.md" />
+    <None Include="data\blog\2016\02-mame-partnera.md" />
     <None Include="data\blog\index.json" />
     <None Include="data\meetups\index.json" />
     <None Include="views\blog\rss.html" />
@@ -106,6 +107,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
