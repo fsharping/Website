@@ -1,6 +1,6 @@
 language: csharp
 
-sudo: required
+sudo: false  # use the new container-based Travis infrastructure
 
 install:
  - sudo apt-get install npm -qq
