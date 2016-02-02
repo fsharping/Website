@@ -41,3 +41,4 @@ let getPosts =
     |> Seq.map withMarkdown
     |> Seq.map withHtml
     |> Seq.map withPerex
+    |> Seq.rev
