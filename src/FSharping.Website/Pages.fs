@@ -1,17 +1,20 @@
 ﻿module FSharping.Website.Pages
 
+open System
 open Suave
 open Shaver.Razor
 
+let private meetups = Meetups.getMeetups |> Seq.toList
+let private upcomingMeetups = meetups |> List.filter (fun x -> x.Start > DateTime.Now)
+let private blogposts = Blog.getPosts |> Seq.toList
+
 let home : WebPart =
-    let blogposts = Blog.getPosts |> Seq.toList
-    let meetups = Meetups.getMeetups |> Seq.toList
     [
         ("Menu", partial "views/menu.html" "home");
         ("Content", 
             [("LeftCol",
                 [("Blog", partial "views/main/leftColBlog.html" blogposts);
-                 ("Meetups", partial "views/main/leftColMeetups.html" meetups)
+                 ("Meetups", partial "views/main/leftColMeetups.html" upcomingMeetups)
                 ] |> nested "views/main/leftCol.html" null);
         
             ] |> nested "views/main/index.html" null);
@@ -32,22 +35,17 @@ let private title key =
 
 module Meetups =
     
-    let rss =
-        let meetups = Meetups.getMeetups |> Seq.rev |> Seq.toList
-        singlePage "views/meetups/rss.html" meetups
+    let rss = singlePage "views/meetups/rss.html" (meetups |> List.rev)
 
     let index = 
-        let meetups = Meetups.getMeetups |> Seq.toList
         [
             ("Menu", partial "views/menu.html" "meetups");
-            ("Content", partial "views/meetups/index.html" meetups);
+            ("Content", partial "views/meetups/index.html" upcomingMeetups);
         ] |> masterPage "views/layout.html" (title "Meetups")
 
 module Blog =
     
-    let rss =
-        let posts = Blog.getPosts |> Seq.rev |> Seq.toList
-        singlePage "views/blog/rss.html" posts
+    let rss = singlePage "views/blog/rss.html" (blogposts |> List.rev)
 
     let index =
         let posts = Blog.getPosts |> Seq.toList

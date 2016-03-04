@@ -20,6 +20,13 @@
       "file": "2016/03-prvni-fsharping-dojmy.md",
       "published": "2016-02-18",
       "author": "Roman Provazník"
+    },
+    {
+      "title": "Připravujeme druhý F# sraz",
+      "rewrite": "pripravujeme-druhy-fsharp-sraz",
+      "file": "2016/04-druhy-fsharping.md",
+      "published": "2016-03-04",
+      "author": "Roman Provazník"
     }
   ]
 }

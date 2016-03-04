@@ -27,3 +27,4 @@ let getMeetups =
     let json = indexFile |> path |> File.ReadAllText  |> JObject.Parse
     json.["meetups"]
     |> Seq.map (fun x -> deserialize<Meetup>(x.ToString()))
+    |> Seq.rev
