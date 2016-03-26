@@ -143,7 +143,7 @@ Target "RunAppWatcher" (fun _ ->
 "PreBuildWww" ==> "BuildWww"
 "CleanTests" ==> "BuildTests"
 "CleanApp" ==> "AssemblyInfo" ==> "BuildWww" ==> "BuildApp"
-"BuildTests"  ==> "RunTests"
+"BuildApp"  ==> "BuildTests"  ==> "RunTests"
 "BuildApp" ==> "RunApp"
 "BuildApp" ==> "RunAppWatcher"
 
