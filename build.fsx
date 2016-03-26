@@ -8,18 +8,18 @@ open Fake
 open Fake.AssemblyInfoFile
 open System.Diagnostics
 
+let title = "FSharping.Website"
+let project = "FSharping Website"
+let summary = "Website source for fsharping.cz"
+
 // Directories
 let buildAppDir = "./build/app/"
 let buildTestDir = "./build/tests/"
-let appSrcDir = "./src/FSharping.Website/"
-let testSrcDir = "./tests/FSharping.Website.Tests/"
+let appSrcDir = sprintf "./src/%s/" title
+let testSrcDir = sprintf "./tests/%s.Tests/" title
 
 // Read release notes & version info from RELEASE_NOTES.md
 let release = File.ReadLines "RELEASE_NOTES.md" |> ReleaseNotesHelper.parseReleaseNotes
-
-let title = "FSharping Website"
-let project = "FSharping Website"
-let summary = "Website source for fsharping.cz"
 
 // Targets
 Target "?" (fun _ ->
@@ -27,12 +27,13 @@ Target "?" (fun _ ->
     printfn " *        Avaliable options (call 'build <Target>')      *"
     printfn " *********************************************************"
     printfn " [Build]"
-    printfn "  > BuildApp"
     printfn "  > BuildTests"
-    printfn "  > BuildWithTests"
+    printfn "  > BuildApp"
     printfn " "
     printfn " [Run]"
-    printfn "  > RunWithRedeploy"
+    printfn "  > RunTests"
+    printfn "  > RunApp"
+    printfn "  > RunAppWatcher"
     printfn " "
     printfn " [Help]"
     printfn "  > ?"
@@ -79,47 +80,6 @@ Target "BuildApp" (fun _ ->
     |> MSBuildRelease buildAppDir "Build"
     |> Log "AppBuild-Output: "
 )
-    
-
-let rec runWebsite() =
-    use watcher = new FileSystemWatcher(appSrcDir, "*.*")
-    watcher.EnableRaisingEvents <- true
-    watcher.IncludeSubdirectories <- true
-    watcher.Changed.Add(handleWatcherEvents)
-    watcher.Created.Add(handleWatcherEvents)
-    watcher.Renamed.Add(handleWatcherEvents)
-   
-    let app = Path.Combine(buildAppDir,"FSharping.Website.exe")
-    let ok = 
-        execProcess (fun info -> 
-            info.WorkingDirectory <- buildAppDir
-            info.FileName <- app
-            info.Arguments <- "") TimeSpan.MaxValue
-    if not ok then tracefn "Website shut down."
-    watcher.Dispose()
-
-and handleWatcherEvents (e:IO.FileSystemEventArgs) =
-    
-    let killProcess = (fun _ -> Process.GetProcessesByName("FSharping.Website") |> Seq.iter (fun p -> p.Kill()))
-
-    match Path.GetExtension e.Name with
-    | ".fs" | ".fsx" -> 
-        killProcess()
-        runSingleTarget (getTarget "BuildApp")
-        runWebsite()
-
-    | ".html" | ".js" | ".css" | ".json" | ".less" | ".md" -> 
-        killProcess()
-        runSingleTarget (getTarget "BuildWww")
-        runWebsite()
-    | ".fsproj" -> ignore()
-    | _ -> ignore()
-    
-
-Target "RunWithRedeploy" (fun _ ->
-    run "BuildApp"
-    runWebsite()
-)
 
 Target "BuildTests" (fun _ ->
     !! (testSrcDir + "**/*.fsproj")
@@ -127,21 +87,65 @@ Target "BuildTests" (fun _ ->
       |> Log "TestBuild-Output: "
 )
 
-Target "BuildWithTests" (fun _ ->
-    !! (buildTestDir + "/FSharping.Website.Tests.dll")
+Target "RunTests" (fun _ ->
+    !! (buildTestDir + sprintf "/%s.Tests.dll" title)
       |> NUnit (fun p ->
           {p with
              DisableShadowCopy = true;
              OutputFile = buildTestDir + "TestResults.xml" })
 )
 
+let runApp() = 
+    execProcess (fun info -> 
+        info.WorkingDirectory <- buildAppDir
+        info.FileName <- Path.Combine(buildAppDir, sprintf "%s.exe" title)
+        info.Arguments <- "") TimeSpan.MaxValue
+    
 
+let rec runAppWithWatcher() =
+    use watcher = new FileSystemWatcher(appSrcDir, "*.*")
+    watcher.EnableRaisingEvents <- true
+    watcher.IncludeSubdirectories <- true
+    watcher.Changed.Add(handleWatcherEvents)
+    watcher.Created.Add(handleWatcherEvents)
+    watcher.Renamed.Add(handleWatcherEvents)
+   
+    let appRunning = runApp()    
+    if not appRunning then tracefn "Application shut down."
+    watcher.Dispose()
+
+and handleWatcherEvents (e:IO.FileSystemEventArgs) =
+    
+    let killProcess = (fun _ -> Process.GetProcessesByName(title) |> Seq.iter (fun p -> p.Kill()))
+
+    match Path.GetExtension e.Name with
+    | ".fs" | ".fsx" -> 
+        killProcess()
+        runSingleTarget (getTarget "BuildApp")
+        runAppWithWatcher()
+
+    | ".html" | ".js" | ".css" | ".json" | ".less" | ".md" -> 
+        killProcess()
+        runSingleTarget (getTarget "BuildWww")
+        runAppWithWatcher()
+    | ".fsproj" -> ignore()
+    | _ -> ignore()
+
+Target "RunApp" (fun _ ->
+    runApp() |> ignore
+)    
+
+Target "RunAppWatcher" (fun _ ->
+    runAppWithWatcher()
+)
 
 // Dependencies
 "PreBuildWww" ==> "BuildWww"
-"CleanApp" ==> "AssemblyInfo" ==> "BuildWww" ==> "BuildApp"
 "CleanTests" ==> "BuildTests"
-"BuildApp"  ==> "BuildTests"  ==> "BuildWithTests"
+"CleanApp" ==> "AssemblyInfo" ==> "BuildWww" ==> "BuildApp"
+"BuildTests"  ==> "RunTests"
+"BuildApp" ==> "RunApp"
+"BuildApp" ==> "RunAppWatcher"
 
 // start build
 RunTargetOrDefault "?"
