@@ -1,4 +1,4 @@
-﻿Druhý FSharping v Pracovně máme (snad) úspěšně za sebou. Tentokrát se nebudu nijak zvlášť vyžblebtávat, ani extra hodnotit - od toho tu jsou jiní (už jste vyplnili nelítostný [feedback formulář](http://www.fsharping.com)?) - nicméně díky moc za výbornou účast a příjemný popřednáškový pokec. Byl to pro mě výjimečný večer. Jak jsem slíbil, dávám ke stažení materiály z přednášky.
+﻿Druhý FSharping v Pracovně máme (snad) úspěšně za sebou. Tentokrát se nebudu nijak zvlášť vyžblebtávat, ani extra hodnotit - od toho tu jsou jiní (už jste vyplnili nelítostný [feedback formulář](https://www.fsharping.cz/feedback)?) - nicméně díky moc za výbornou účast a příjemný popřednáškový pokec. Byl to pro mě výjimečný večer. Jak jsem slíbil, dávám ke stažení materiály z přednášky.
 
 [comment]:Perex
 
