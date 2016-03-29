@@ -1,4 +1,5 @@
 ﻿<h3>Srazy</h3>
+@if(Model.Any()) {
 <ul>
     @foreach(var item in Model) {
     <li>
@@ -9,3 +10,6 @@
     </li>
     }
 </ul>
+} else {
+    <p><i>{{{$:Texts:NoMeetupAvailable}}}</i></p>
+}

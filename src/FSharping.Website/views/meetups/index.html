@@ -1,25 +1,31 @@
-﻿@foreach(var item in @Model) {
-<div class="row">
-    <div class="col-md-12 title">
-        <h2>@item.Title</h2>
-        <p class="start">
-            <i class="fa fa-calendar-o"></i>
-            <span>@item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm"), </span>
-            <span>@item.Address</span>
-        </p>
-    </div>
-    <div class="col-md-6">
-        <div class="meetup">
-            <p class="description">
-                @item.Description
+﻿@if(Model.Any()) {
+
+    foreach(var item in @Model) {
+    <div class="row">
+        <div class="col-md-12 title">
+            <h2>@item.Title</h2>
+            <p class="start">
+                <i class="fa fa-calendar-o"></i>
+                <span>@item.Start.ToString("dd. MM. yyyy") {{{$:Texts:At}}} @item.Start.ToString("HH:mm"), </span>
+                <span>@item.Address</span>
             </p>
-            <div class="register">
-                <a class="btn btn-success" href="@item.Link"><i class="fa fa-users"></i>&nbsp;{{{$:Texts:IwantToCome}}}</a>
+        </div>
+        <div class="col-md-6">
+            <div class="meetup">
+                <p class="description">
+                    @item.Description
+                </p>
+                <div class="register">
+                    <a class="btn btn-success" href="@item.Link"><i class="fa fa-users"></i>&nbsp;{{{$:Texts:IwantToCome}}}</a>
+                </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="map" id="map_@item.Rewrite" data-lat="@item.Gps.Lat" data-lon="@item.Gps.Lon"></div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <div class="map" id="map_@item.Rewrite" data-lat="@item.Gps.Lat" data-lon="@item.Gps.Lon"></div>
-    </div>
-</div>
+    }
+
+} else {
+    <p><i>{{{$:Texts:NoMeetupAvailable}}}</i></p>
 }

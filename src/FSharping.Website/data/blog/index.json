@@ -27,6 +27,13 @@
       "file": "2016/04-druhy-fsharping.md",
       "published": "2016-03-04",
       "author": "Roman Provazník"
+    },
+    {
+      "title": "Materiály z druhého F# srazu",
+      "rewrite": "materialy-z-druheho-fsharp-srazu",
+      "file": "2016/05-materialy-druhy-fsharping.md",
+      "published": "2016-03-29",
+      "author": "Roman Provazník"
     }
   ]
 }
