@@ -70,6 +70,7 @@
     <None Include="data\blog\2016\02-mame-partnera.md" />
     <None Include="data\blog\2016\03-prvni-fsharping-dojmy.md" />
     <None Include="data\blog\2016\04-druhy-fsharping.md" />
+    <None Include="data\blog\2016\05-materialy-druhy-fsharping.md" />
     <None Include="data\blog\index.json" />
     <None Include="data\meetups\index.json" />
     <None Include="views\blog\rss.html" />

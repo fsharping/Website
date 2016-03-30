@@ -2,6 +2,6 @@
 
 [comment]:Perex
 
-Vše najdete na [našem GitHubu](https://github.com/fsharping/Docs/tree/master/Boot2FSharp) a postupně budu přidávat další, jak budou přednášky a materiály přibývat. Naložte s nimi dle libosti.
+Vše najdete na [našem GitHubu](https://github.com/fsharping/Docs) a postupně budu přidávat další, jak budou přednášky a materiály přibývat. Naložte s nimi dle libosti.
 
 Jinak stále platí, že FSharping je otevřen všem, kdo se chtějí podělit o své zkušenosti a znalosti. Stačí se vymyslet téma, ozvat se nám s Jirkou a příští hodina nehynoucí slávy může být vaše. :)
