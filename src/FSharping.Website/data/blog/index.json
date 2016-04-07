@@ -34,6 +34,13 @@
       "file": "2016/05-materialy-druhy-fsharping.md",
       "published": "2016-03-29",
       "author": "Roman Provazník"
+    },
+    {
+      "title": "FSharping + GDG Pardubice",
+      "rewrite": "fsharping-gdg-pardubice",
+      "file": "2016/06-fsharping-gdg-pardubice.md",
+      "published": "2016-04-07",
+      "author": "Roman Provazník"
     }
   ]
 }

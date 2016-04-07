@@ -23,6 +23,18 @@
         "lon": 14.4480897
       },
       "link": "http://srazy.info/fsharping/6307"
+    },
+    {
+      "title": "GDG Pardubice - Úvod do světa F# (pohledem C# vývojáře)",
+      "rewrite": "gdg-pardubice",
+      "start": "2016-04-20 18:00:00",
+      "description": "Čím je jazyk F# zajímavý a proč si ho zamilujete? Jak začít a na co si dát pozor? Jaké nástroje a pluginy zvolit? Na tomto meetupu si ukážeme úplné začátky v jazyce F# a zaměříme se na ty nejzajímavější featury. Povídání je určené i pro úplné začátečníky, kteří si chtějí F# pouze vyzkoušet. Přednášet bude F# nadšenec Roman Provazník.",
+      "address": "Fakulta elektrotechniky a informatiky, Univerzita Pardubice",
+      "gps": {
+        "lat": 50.048314,
+        "lon": 15.768460
+      },
+      "link": " http://gdgpardubice.cz/go/f-sharp"
     }
   ]
 }

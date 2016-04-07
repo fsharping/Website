@@ -13,7 +13,7 @@ let home : WebPart =
         ("Menu", partial "views/menu.html" "home");
         ("Content", 
             [("LeftCol",
-                [("Blog", partial "views/main/leftColBlog.html" blogposts);
+                [("Blog", partial "views/main/leftColBlog.html" (blogposts |> List.take 5));
                  ("Meetups", partial "views/main/leftColMeetups.html" upcomingMeetups)
                 ] |> nested "views/main/leftCol.html" null);
         
