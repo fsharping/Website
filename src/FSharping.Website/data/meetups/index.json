@@ -35,6 +35,18 @@
         "lon": 15.7675186
       },
       "link": " http://gdgpardubice.cz/go/f-sharp"
+    },
+    {
+      "title": "FSharping #3 - F# v produkci",
+      "rewrite": "fsharping-3",
+      "start": "2016-05-10 19:00:00",
+      "description": "Jak lze využít F# v reálném prostředí, jak na interop se C# knihovnami a jaké F# projekty vznikají na domácí softwarové scéně? Přednášet bude dvojice David Podhola a Jindřich Ivánek.",
+      "address": "Pracovna, Vlkova 36, Praha 3 - Žižkov",
+      "gps": {
+        "lat": 50.0836364,
+        "lon": 14.4480897
+      },
+      "link": "http://srazy.info/fsharping/6485"
     }
   ]
 }
