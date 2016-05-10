@@ -26,7 +26,7 @@ let webPart =
         pathScan "/blog/%s" (fun rewrite -> Pages.Blog.detail rewrite)
         path "/meetups" >=> Pages.Meetups.index
         path "/meetups/rss.xml" >=> Pages.Meetups.rss >=> setMimeType "text/xml; charset=utf-8"
-        path "/feedback" >=> Redirection.redirect "http://goo.gl/forms/GdPZzNbcIw"
+        path "/feedback" >=> Redirection.redirect "http://goo.gl/forms/XpYiX4RSuu"
         pathRegex "(.*)\.(css|js|png|otf|eot|svg|ttf|woff|woff2|ico|xml|json)" >=> Files.browseHome
         pathRegex "(.*)" >=> Pages.error404
     ]
