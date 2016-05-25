@@ -47,6 +47,18 @@
         "lon": 14.4480897
       },
       "link": "http://srazy.info/fsharping/6485"
+    },
+    {
+      "title": "FSharping #4 - Jak vytvořit webovou aplikaci v F#",
+      "rewrite": "fsharping-4",
+      "start": "2016-06-23 19:00:00",
+      "description": "Jak během pár minut vytvořit v F# funkční webové stránky nebo REST API? Jaké knihovny se naučit a které znalosti si naopak přenesete z ASP.NET MVC? A co takhle vaši webovou aplikaci spustit rovnou v Dockeru? To vše vám ukáže nadšenec do F# Roman Provazník.",
+      "address": "Pracovna, Vlkova 36, Praha 3 - Žižkov",
+      "gps": {
+        "lat": 50.0836364,
+        "lon": 14.4480897
+      },
+      "link": "http://srazy.info/fsharping/6578"
     }
   ]
 }

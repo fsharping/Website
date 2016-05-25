@@ -48,6 +48,13 @@
       "file": "2016/07-treti-fsharping.md",
       "published": "2016-04-26",
       "author": "Roman Provazník"
+    },
+    {
+      "title": "F# sraz č. 4 - Jak vytvořit webovou aplikaci v F#",
+      "rewrite": "vyvoj-webu-v-fsharpu",
+      "file": "2016/08-vyvoj-webu-v-fsharpu.md",
+      "published": "2016-05-25",
+      "author": "Roman Provazník"
     }
   ]
 }
