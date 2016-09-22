@@ -59,6 +59,30 @@
         "lon": 14.4480897
       },
       "link": "http://srazy.info/fsharping/6578"
+    },
+    {
+      "title": "FSharping #5 - FSharping |> Pivo",
+      "rewrite": "fsharping-5",
+      "start": "2016-08-16 19:00:00",
+      "description": "Setkání F# komunity nad pivkem. Probereme co nového, zajímavosti a pokecáme.",
+      "address": "Bar Polo, Jana Želivského 1790/35, Praha 3 - Žižkov",
+      "gps": {
+        "lat": 50.0892,
+        "lon": 14.4683
+      },
+      "link": "http://srazy.info/fsharping/6696"
+    },
+    {
+      "title": "FSharping #6 - Actor Model a distribuované aplikace v F#",
+      "rewrite": "fsharping-6",
+      "start": "2016-10-19 19:00:00",
+      "description": "Nejen o tom, jak v praxi programovat distribuované aplikace v jazyce F#, o Akka.NET a projektu Orleankka přijde popovídat David Podhola.",
+      "address": "Pracovna, Vlkova 36, Praha 3 - Žižkov",
+      "gps": {
+        "lat": 50.0836364,
+        "lon": 14.4480897
+      },
+      "link": "http://srazy.info/fsharping/6778"
     }
   ]
 }

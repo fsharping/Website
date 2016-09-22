@@ -102,6 +102,7 @@
     <None Include="wwwroot\css\styles.less" />
     <None Include="wwwroot\img\logo.png" />
     <None Include="wwwroot\img\topmonks.svg" />
+    <None Include="wwwroot\img\cn-group-logo.svg" />
     <Content Include="wwwroot\js\maps.js" />
     <Content Include="wwwroot\js\popovers.js" />
   </ItemGroup>
