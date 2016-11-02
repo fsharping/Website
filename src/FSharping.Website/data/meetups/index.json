@@ -83,6 +83,18 @@
         "lon": 14.4480897
       },
       "link": "http://srazy.info/fsharping/6778"
+    },
+	{
+      "title": "FSharping #7 - Modelování opcí v F#",
+      "rewrite": "fsharping-7",
+      "start": "2016-11-14 19:00:00",
+      "description": "Honza Fajfr nám ukáže jak na opce, jejich parametry a popis pomocí F# struktur, komponování opcí do opčních strategií a ukáže vizualizace cen a výnosů (NVD3, D3, Fable).",
+      "address": "Pracovna, Vlkova 36, Praha 3 - Žižkov",
+      "gps": {
+        "lat": 50.0836364,
+        "lon": 14.4480897
+      },
+      "link": "http://srazy.info/fsharping/6918"
     }
   ]
 }

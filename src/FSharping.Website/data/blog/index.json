@@ -62,6 +62,13 @@
       "file": "2016/09-novy-partner-a-sesty-fsharping.md",
       "published": "2016-09-22",
       "author": "Roman Provazník"
+    },
+	{
+      "title": "Sedmý FSharping",
+      "rewrite": "sedmy-fsharping",
+      "file": "2016/10-sedmy-fsharping.md",
+      "published": "2016-11-02",
+      "author": "Roman Provazník"
     }
   ]
 }
