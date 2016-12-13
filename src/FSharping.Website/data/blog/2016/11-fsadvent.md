@@ -1,8 +1,8 @@
-# Building F# community in Czech Republic
-
-This blog post is part of [F# Advent 2016](https://sergeytihon.wordpress.com/2016/10/23/f-advent-calendar-in-english-2016/).
+﻿This blog post is part of [F# Advent 2016](https://sergeytihon.wordpress.com/2016/10/23/f-advent-calendar-in-english-2016/).
 
 Funny. Reading all already published F# Advent posts and thinking: "Man, F# advent has readers across the world, most of them are kick-ass smart functional brains eager to read more and more amazing functional code and you are going to post article about F# with actually *no single line* of code? Good luck with that. Maybe this would be the first codeless F# blogpost ever! What could possibly go wrong?" Ok, I\`ll do it anyway. So here it is:
+
+[comment]:Perex
 
 Let me tell you short story about how we created F# community in Czech Republic and what I learned from it.
 
