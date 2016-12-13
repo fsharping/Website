@@ -10,7 +10,9 @@ At the very beginning there was one "C# for food, F# for fun" developer living i
 
 Ok, this needs to change! We are programmers and what we do, if we need something? We build it! So I asked for help my friend Jirka Pénzeš (he is clojurist, but he is fine :)) experienced in organizing IT conferences and we started with first meetup setup. Finding proper place was quite easy - Prague is full of nice co-working places where you can even get fresh beer, so no problem here. We chose place called "Pracovna" which means "Working place" in Czech. Ok, we got place, now we need cool name. FSharping domain available in .com and .cz? Good, I\`ll take them both. Should we call it FSharping or F#ing? The first one is probably better - F#ing could be easily misunderstood as meetup group for quite different activity which is also fun, but for which we do not usually organize meetups (but this is Prague - you never know, maybe one day...). Ok, so we got place, we got cool name, website is prepared (written in F# on [Suave](https://suave.io), of course), hm... Is there something we forgot? Speakers! We need good speakers! I can have some talks about F#, mostly about web development, but let\`s keep it as fallback we-could-not-get-anyone-better-then-me-oh-dear option. The first kick-off should be done by someone, who is famous and respected in F# community. Someone with great presentation skills and deep F# knowledge. And possibly native Czech speaker. So if you need someone like this, who do you call?! No, no, not Ghostbusters. We called Tomáš Petříček. I can still remember his first reaction when we bashfully asked him whether he would be willing to kick-off our first meetup. He said: "If you invite me, I\`d be pleased." No conditions, no negotiations, just ok, I\`ll come? Wow! And he did!
 
+
 ![First meetup](https://res.cloudinary.com/dzoukr/image/upload/c_scale,q_100,w_820/v1455722399/IMG_6841_li3oqb.jpg)
+
 
 So we started FSharping - F# meetup group with simple rule: *Come and learn, come and teach, everyone is welcome!*
 
@@ -31,7 +33,9 @@ And also "external" talks about F# (for companies and other meetup groups):
 * [UI Automation Hints](http://https://www.meetup.com/TopMonks-Caffe/events/235151244/) - TopMonks Caffè
 * [Why is F# cool?](http://http://d3s.mff.cuni.cz/teaching/commercial_workshops/?popup=zs1617_cngroup#popup_zs1617_cngroup) - Faculty of Mathematics and Physics at Charles University in Prague
 
+
 ![Suave meetup](https://res.cloudinary.com/dzoukr/image/upload/c_scale,q_100,w_820/v1481610430/fsharping_suave.jpg)
+
 
 Already planned for Q1 2017:
 
