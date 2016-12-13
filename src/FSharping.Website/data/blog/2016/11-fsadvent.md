@@ -55,11 +55,11 @@ So what\`s the moral of this story? To praise ourselves? Hell no! That\`s not th
 
 Ok, so, how should I end this codeless blogpost? I\`d like to give my thanks to few people and because it is advent blogpost, so maybe I could make a wish? Ok.
 
-All FSharping members and speakers - without you, whole meetup would be meaningless. Thanks again and looking forward to see you all in 2017!
-Jirka Pénzeš - dude, without your help, there would be no FSharping. Cannot thank enough!
-Don Syme - thanks for creating and still keeping eye on such a great language.
-Scott Wlaschin - as I already said over Slack: Your F# for fun & profit is still bible for all of us. Thanks for that and for the [book](https://https://www.gitbook.com/book/swlaschin/fsharpforfunandprofit/details).
-Tomáš and Evelína - I always enjoy having burger, beer and chat with you even if I sometimes don\`t have a clue, what the hell are you talking about. :) Thanks for supporting us from the very beginning.
-Krzysztof, Ademar, Henrik, Steffen, Alfonso, Tomasz and all other great F# OSS contributors - whole F# community stands on your shoulders. Thanks for making them strong!
+* All FSharping members and speakers - without you, whole meetup would be meaningless. Thanks again and looking forward to see you all in 2017!
+* Jirka Pénzeš - dude, without your help, there would be no FSharping. Cannot thank enough!
+* Don Syme - thanks for creating and still keeping eye on such a great language.
+* Scott Wlaschin - as I already said over Slack: Your F# for fun & profit is still bible for all of us. Thanks for that and for the [book](https://https://www.gitbook.com/book/swlaschin/fsharpforfunandprofit/details).
+* Tomáš and Evelína - I always enjoy having burger, beer and chat with you even if I sometimes don\`t have a clue, what the hell are you talking about. :) Thanks for supporting us from the very beginning.
+* Krzysztof, Ademar, Henrik, Steffen, Alfonso, Tomasz and all other great F# OSS contributors - whole F# community stands on your shoulders. Thanks for making them strong!
 
 I wish you all Merry Christmas and a lot of **F#un** in 2017!
