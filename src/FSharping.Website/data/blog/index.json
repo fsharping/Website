@@ -69,6 +69,13 @@
       "file": "2016/10-sedmy-fsharping.md",
       "published": "2016-11-02",
       "author": "Roman Provazník"
+    },
+	{
+      "title": "Building F# community in Czech Republic",
+      "rewrite": "building-fsharp-community-in-czech-republic",
+      "file": "2016/11-fsadvent.md",
+      "published": "2016-12-13",
+      "author": "Roman Provazník"
     }
   ]
 }
