@@ -61,6 +61,7 @@
   </Target>
   -->
   <ItemGroup>
+    <None Include="data\blog\2017\01-druha-sezona-zacina.md" />
     <None Include="paket.references" />
     <Compile Include="AssemblyInfo.fs" />
     <None Include="bower.json" />

@@ -63,18 +63,25 @@
       "published": "2016-09-22",
       "author": "Roman Provazník"
     },
-	{
+    {
       "title": "Sedmý FSharping",
       "rewrite": "sedmy-fsharping",
       "file": "2016/10-sedmy-fsharping.md",
       "published": "2016-11-02",
       "author": "Roman Provazník"
     },
-	{
+    {
       "title": "Building F# community in Czech Republic",
       "rewrite": "building-fsharp-community-in-czech-republic",
       "file": "2016/11-fsadvent.md",
       "published": "2016-12-13",
+      "author": "Roman Provazník"
+    },
+    {
+      "title": "Druhá sezóna FSharpingu začíná",
+      "rewrite": "druha-sezona-zacina",
+      "file": "2017/01-druha-sezona-zacina.md",
+      "published": "2017-01-06",
       "author": "Roman Provazník"
     }
   ]
