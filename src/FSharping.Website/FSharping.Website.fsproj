@@ -61,7 +61,6 @@
   </Target>
   -->
   <ItemGroup>
-    <None Include="data\blog\2017\01-druha-sezona-zacina.md" />
     <None Include="paket.references" />
     <Compile Include="AssemblyInfo.fs" />
     <None Include="bower.json" />
@@ -76,6 +75,7 @@
     <None Include="data\blog\2016\07-treti-fsharping.md" />
     <None Include="data\blog\2016\08-vyvoj-webu-v-fsharpu.md" />
     <None Include="data\blog\2016\09-novy-partner-a-sesty-fsharping.md" />
+    <None Include="data\blog\2017\01-druha-sezona-zacina.md" />
     <None Include="data\blog\index.json" />
     <None Include="data\meetups\index.json" />
     <None Include="views\blog\rss.html" />

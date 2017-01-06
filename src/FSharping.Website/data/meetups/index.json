@@ -99,7 +99,7 @@
     {
       "title": "FSharping #8 - Railway Oriented Programming",
       "rewrite": "fsharping-8",
-      "start": "2016-01-30 19:00:00",
+      "start": "2017-01-30 19:00:00",
       "description": "Reálné aplikace mají ve zvyku každou chvíli scházet z programátorem vysněné happy path. Jak takové situace můžeme řešit v F#? Jak a proč nechat výjimky výjimečné a poprat se s chybami ryze funcionálně? A jak nechat většinu práce na kompilátoru a typovém systému? S Honzou Břešťanem se skrz kolejnicovou metaforu Scotta Wlaschina podíváme, jak se zbavit neošetřených runtime errorů a spát o poznání klidněji.",
       "address": "Pracovna, Vlkova 36, Praha 3 - Žižkov",
       "gps": {
