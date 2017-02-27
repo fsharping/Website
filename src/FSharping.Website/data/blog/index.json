@@ -83,6 +83,13 @@
       "file": "2017/01-druha-sezona-zacina.md",
       "published": "2017-01-06",
       "author": "Roman Provazník"
+    },
+	{
+      "title": "F# sraz č. 9 - Type Providers",
+      "rewrite": "devaty-fsharping",
+      "file": "2017/02-type-providers.md",
+      "published": "2017-02-27",
+      "author": "Roman Provazník"
     }
   ]
 }

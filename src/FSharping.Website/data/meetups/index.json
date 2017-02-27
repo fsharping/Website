@@ -107,6 +107,18 @@
         "lon": 14.4480897
       },
       "link": "http://srazy.info/fsharping/7053"
+    },
+	{
+      "title": "FSharping #9 - Type Providers",
+      "rewrite": "fsharping-9",
+      "start": "2017-03-13 19:00:00",
+      "description": "Type providers jsou jedna z \"killer features\" jazyka F# umožňující bezpečně a zároveň jednoduše pracovat s externími daty. Jak si ulehčit práci s databází? Jak se dotazovat na strukturovaná data v JSON, XML, HTML nebo CSV bez nutnosti ručního parsování? Na to vše se podíváme společně s Romanem Provazníkem na našem devátém FSharpingu.",
+      "address": "Pracovna, Vlkova 36, Praha 3 - Žižkov",
+      "gps": {
+        "lat": 50.0836364,
+        "lon": 14.4480897
+      },
+      "link": "http://srazy.info/fsharping/7136"
     }
   ]
 }
