@@ -4,7 +4,7 @@ sudo: required
 
 install:
  - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
- - apt-get install npm -qq
+ - apt-get install npm
 
 services:
   - docker
