@@ -2,9 +2,10 @@ language: csharp
 
 sudo: required
 
-before_install:
- - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+install:
  - sudo apt-get install npm -qq
+ - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+ 
 
 services:
   - docker
